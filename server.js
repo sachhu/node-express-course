@@ -1,17 +1,17 @@
 const express = require('express');
 const app = express();
 
-const monkUserData=[
-    {name:'Mark'},
-    {name:'Jill'}
+const mockUserData=[
+	{name:'Mark'},
+	{name:'Jill'}
 ]
-app.get('/user', function(req,res){
-    res.json({
-        success: true,
-        message: "successfully got user. Nice!",
-        user: mockUserData
-    })
+
+app.get('/users',function(req,res){
+	res.json({
+		success: true,
+		message: 'successfully got users. Nice!',
+		users: mockUserData
+	})
 })
-app.listen(8000,function(){
-    console.log("server is running")
-})
+
+app.listen(8000,function(){console.log('server is listening')})
